@@ -1,0 +1,2 @@
+- [x] Implement game mechanism following `Dodge the creeps 2D tutorial`
+- [] Define timer to specify end of game
