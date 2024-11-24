@@ -2,8 +2,11 @@ extends Area2D
 class_name Enemy
 
 var velocity: Vector2
-var speed: int = 150
+var base_speed: int = 150
+var speed: int = base_speed
 var mob_types = ['walk', 'run']
+#var mob_types = ['bee']
+# var mob_types = ['snail']
 
 signal hit
 
@@ -12,7 +15,7 @@ func _ready():
 	if mob_anim_type == 'run':
 		speed = 300
 	else:
-		speed = 150
+		speed = base_speed
 	$AnimatedSprite2D.play(mob_anim_type)
 	
 func _process(delta: float) -> void:

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2b716ea0jrvy"]
+[gd_scene load_steps=6 format=3 uid="uid://c2b716ea0jrvy"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_nkjj0"]
+[ext_resource type="Texture2D" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/Boar/board.png" id="2_vneh1"]
+[ext_resource type="Texture2D" uid="uid://cidk2fw0372" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/Bee.png" id="3_rjrxw"]
+[ext_resource type="Texture2D" uid="uid://csesi1pixub1q" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/snail.png" id="4_vt12e"]
+[ext_resource type="Script" path="res://scripts/item_list.gd" id="5_pj04v"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_nkjj0")
@@ -49,6 +53,42 @@ text = "Start"
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 512.0
+offset_top = 128.0
+offset_right = 552.0
+offset_bottom = 168.0
+metadata/_edit_group_ = true
+
+[node name="ItemList" type="ItemList" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 728.0
+offset_top = 364.0
+offset_right = 728.0
+offset_bottom = 364.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 3
+max_text_lines = 3
+item_count = 3
+item_0/text = "Boar"
+item_0/icon = ExtResource("2_vneh1")
+item_1/text = "Bee"
+item_1/icon = ExtResource("3_rjrxw")
+item_2/text = "Snail"
+item_2/icon = ExtResource("4_vt12e")
+script = ExtResource("5_pj04v")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

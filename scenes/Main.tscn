@@ -34,10 +34,11 @@ rotation = -0.0017316
 wait_time = 2.0
 one_shot = true
 
-[node name="ScoreTimer" type="Timer" parent="."]
+[node name="GameTimer" type="Timer" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource("4_hwj0x")]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]

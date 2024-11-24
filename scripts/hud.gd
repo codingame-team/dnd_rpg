@@ -7,6 +7,10 @@ func show_message(text):
 	$Message.text = text
 	$Message.show()
 	$MessageTimer.start()
+	#if not $StartButton.visible:
+		#$StartButton.show()
+		#start_game.emit()
+
 
 func update_score(score):
 	$ScoreLabel.text = str(score)

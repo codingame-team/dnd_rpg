@@ -15,6 +15,19 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 	
+func _process(delta):
+	var viewport_size = get_viewport_rect().size
+	
+	# Get the current sprite frame size
+	var sprite_size = $AnimatedSprite2D.sprite_frames.get_frame_texture("attack", 0).get_size()
+	var half_width = sprite_size.x * scale.x / 2
+	var half_height = sprite_size.y * scale.y / 2
+	
+	# Clamp position while accounting for player size
+	position.x = clamp(position.x, half_width, viewport_size.x - half_width)
+	position.y = clamp(position.y, half_height, viewport_size.y - half_height)
+
+
 func _physics_process(delta):
 	if not alive:
 		$AnimatedSprite2D.play("dead")

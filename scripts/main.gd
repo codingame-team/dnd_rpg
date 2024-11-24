@@ -2,14 +2,19 @@ extends Node
 
 @export var mob_scene: PackedScene
 var score
+var time_left: int = 30
 
 func _ready():
 	new_game()
 	
 func game_over():
-	$ScoreTimer.stop()
+	$GameTimer.stop()
 	$MobTimer.stop()
-	$HUD.show_game_over()
+	var msg: String = "Game over!\nYour score: %d" % score
+	$HUD.show_message(msg)
+	get_tree().paused = true
+	#get_node("/root/Hud/StartButton").show()
+	#get_node("/root/Main").update_score() # Replace with function body.
 
 	
 func new_game():
@@ -50,4 +55,12 @@ func update_score():
 	
 func _on_start_timer_timeout():
 	$MobTimer.start()
-	$ScoreTimer.start()
+	$GameTimer.start()
+	score = 0
+	$HUD/StartButton.hide()
+
+
+func _on_game_timer_timeout() -> void:
+	if time_left == 0:
+		game_over()
+	time_left -= 1
