@@ -41,11 +41,23 @@ func _on_mob_timer_timeout():
 
 	# Add some randomness to the direction.
 	direction += randf_range(-PI / 4, PI / 4)
-	mob.rotation = direction
 
-	# Choose the velocity for the mob.
-	mob.velocity = Vector2(randf_range(150.0, 250.0), 0.0).rotated(direction)
+	# Flip the sprite based on movement direction
+	# If moving left (negative x velocity), flip the sprite
+	var velocity = Vector2(randf_range(150.0, 250.0), 0.0).rotated(direction)
+	#mob.get_node("AnimatedSprite2D").flip_h = velocity.x > 0
+
+	# Calculate rotation based on velocity direction
+	# Using atan2 to get the angle from velocity vector
+	mob.rotation = velocity.angle() + PI
 	
+	# Since sprite faces left by default, we need to flip it when moving right
+	# This keeps the sprite properly oriented with the velocity
+	mob.get_node("AnimatedSprite2D").flip_v = velocity.x > 0
+	
+	# Set the velocity
+	mob.velocity = velocity
+
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
 

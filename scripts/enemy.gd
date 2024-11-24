@@ -19,10 +19,10 @@ func _ready():
 	$AnimatedSprite2D.play(mob_anim_type)
 	
 func _process(delta: float) -> void:
-	if velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
-	else:
-		$AnimatedSprite2D.flip_h = false
+	#if velocity.x < 0:
+		#$AnimatedSprite2D.flip_h = true
+	#else:
+		#$AnimatedSprite2D.flip_h = false
 	position += velocity * delta
 	
 func _on_visible_on_screen_notifier_2d_screen_exited():
