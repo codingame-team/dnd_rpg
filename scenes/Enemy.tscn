@@ -156,16 +156,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_popx0")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_lgh2a")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_55r0i")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_8350v")
 }],
 "loop": true,
@@ -277,7 +277,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(120, 67)
 sprite_frames = SubResource("SpriteFrames_slir0")
-animation = &"run"
+animation = &"hit-vanished"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 0

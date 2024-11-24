@@ -30,11 +30,21 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_body_entered(body: Node) -> void:
-	hide() # Enemy disappears after being hit.
-	hit.emit()
-	# queue_free()
-	## Must be deferred as we can't change physics properties on a physics callback.
+	# Disable collision immediately to prevent multiple hits
 	$CollisionShape2D.set_deferred("disabled", true)
+	
+	# Play the vanishing animation
+	$AnimatedSprite2D.play("hit-vanished")
+	
+	# Emit the hit signal
+	hit.emit()
+	
+	# Wait for 1 second
+	await get_tree().create_timer(1.0).timeout
+	
+	# Delete the mob
+	queue_free()
+
 
 
 func _on_hit() -> void:
