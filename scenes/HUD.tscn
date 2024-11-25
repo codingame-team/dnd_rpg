@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2b716ea0jrvy"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_nkjj0"]
-[ext_resource type="Texture2D" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/Boar/board.png" id="2_vneh1"]
+[ext_resource type="Texture2D" uid="uid://r2uv61ls1x2t" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/boar.png" id="2_vneh1"]
 [ext_resource type="Texture2D" uid="uid://cidk2fw0372" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/Bee.png" id="3_rjrxw"]
 [ext_resource type="Texture2D" uid="uid://csesi1pixub1q" path="res://art/Legacy-Fantasy - High Forest 2.3/Mob/snail.png" id="4_vt12e"]
 [ext_resource type="Script" path="res://scripts/item_list.gd" id="5_pj04v"]
