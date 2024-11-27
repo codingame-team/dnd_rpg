@@ -1,7 +1,6 @@
-[gd_scene load_steps=62 format=3 uid="uid://bohfe7bqfbjih"]
+[gd_scene load_steps=55 format=3 uid="uid://bohfe7bqfbjih"]
 
 [ext_resource type="Script" path="res://scripts/hero.gd" id="1_a1roh"]
-[ext_resource type="Texture2D" uid="uid://dwwl8x8qxcl0q" path="res://art/generic_char_v0.2/png/blue/char_blue_1.png" id="1_bsiih"]
 [ext_resource type="Texture2D" uid="uid://dja00vvbp7vt7" path="res://art/Legacy-Fantasy - High Forest 2.3/Character/Dead/Dead-Sheet.png" id="2_o80q8"]
 [ext_resource type="Texture2D" uid="uid://daytl080ihxpc" path="res://art/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-02-Sheet.png" id="2_urnrs"]
 [ext_resource type="Texture2D" uid="uid://bawev5m3bxkmd" path="res://art/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="4_wdlqf"]
@@ -72,30 +71,6 @@ region = Rect2(480, 0, 80, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fehux"]
 atlas = ExtResource("2_o80q8")
 region = Rect2(560, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3ym8"]
-atlas = ExtResource("1_bsiih")
-region = Rect2(0, 6, 56, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_evqgs"]
-atlas = ExtResource("1_bsiih")
-region = Rect2(56, 6, 56, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dgdi"]
-atlas = ExtResource("1_bsiih")
-region = Rect2(112, 6, 56, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_42dfh"]
-atlas = ExtResource("1_bsiih")
-region = Rect2(168, 6, 56, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q524b"]
-atlas = ExtResource("1_bsiih")
-region = Rect2(224, 6, 56, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3us0n"]
-atlas = ExtResource("1_bsiih")
-region = Rect2(280, 6, 56, 67)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7efwi"]
 atlas = ExtResource("4_wdlqf")
@@ -275,29 +250,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f3ym8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_evqgs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2dgdi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_42dfh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q524b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3us0n")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_7efwi")
 }, {
 "duration": 1.0,
@@ -415,7 +367,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, 1)
 sprite_frames = SubResource("SpriteFrames_0d64b")
-animation = &"attack"
+animation = &"run"
 speed_scale = 4.38
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
